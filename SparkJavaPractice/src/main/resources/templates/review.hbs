@@ -1,0 +1,17 @@
+{{#partial "content"}}
+    <h1>Reviews</h1>
+
+    <ul>
+        {{#each reviewList}}
+            <li>{{rating}} at {{comment}}</li>
+        {{/each}}
+    </ul>
+
+    <form action="/courses/{{courseId}}/reviews" method="post">
+        <input type="number" min="0" step="1" placeholder="0" name="courseRating"/>
+        <input type="text" placeholder="comment" name="courseComment"/>
+        <button>Submit</button>
+    </form>
+{{/partial}}
+
+{{> base.hbs}}
